@@ -7,7 +7,6 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include <sstream>
 #include <cstdio> 
 
 using namespace std;
@@ -43,10 +42,7 @@ int main() {
   // Get the values.
   for (int i = 0; i < sizeof(months) / sizeof(*months); ++i) {
     string month = months[i];
-    stringstream ss;
-    ss << "Please enter the phone bill for the month of " << month << ":\t"; 
-    string msg = ss.str();
-    cout << msg;
+    cout << "Please enter the phone bill for the month of " << month << ":\t"; 
     cin >> collection[month];
   }
 
