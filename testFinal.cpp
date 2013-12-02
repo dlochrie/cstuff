@@ -13,6 +13,22 @@ using namespace std;
 
 float total;
 
+// Sample Output:
+// Your total for the year was:  $67.
+// Your monthly average was: $5.58333.
+// Your payment for January was  $4.
+// Your payment for February was   $3.
+// Your payment for March was  $2.
+// Your payment for April was  $2.
+// Your payment for May was  $4.
+// Your payment for June was   $5.
+// Your payment for July was   $6.
+// Your payment for August was   $34.
+// Your payment for September was  $2.
+// Your payment for October was  $1.
+// Your payment for November was   $1.
+// Your payment for December was   $3.
+
 // @Me: So that the lines don't go past 80 characters, you can wrap an array
 // like this:
  string months[12] = {
@@ -63,9 +79,14 @@ int main() {
    * - element member first is the key
    * - element member second is the value
    */
-  MonthlyBills::iterator pos;
-  for (pos = collection.begin(); pos != collection.end(); ++pos) {
-    cout << "In the month of \"" << pos->first << "\" "
-        << "you paid $" << pos->second << "." << endl;
+  // MonthlyBills::iterator pos;
+  // for (pos = collection.begin(); pos != collection.end(); ++pos) {
+  //   cout << "In the month of \"" << pos->first << "\" "
+  //       << "you paid $" << pos->second << "." << endl;
+  // }
+  for (int i = 0; i < sizeof(months) / sizeof(*months); ++i) {
+    string month = months[i];
+    float payment = collection[month];
+    cout << "Your payment for " << month << " was \t$" << payment << "."<< endl;
   }
 }
